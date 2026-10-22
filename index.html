@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xem thử Giao diện Tuyên - Haravan Theme</title>
+  <style>
+    /* ==========================================================================
+       1. RESET & SETUP CƠ BẢN
+       ========================================================================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* ==========================================================================
+       2. ANNOUNCEMENT BAR (SLOGAN CHẠY CHỮ - PAGE 1)
+       ========================================================================== */
+    .announcement-bar {
+      background-color: #000;
+      color: #fff;
+      overflow: hidden;
+      padding: 8px 0;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .marquee-wrapper {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .marquee-content {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+
+    .marquee-content span {
+      padding-right: 60px;
+      font-weight: 500;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       3. SITE HEADER & LOGO
+       ========================================================================== */
+    .site-header {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 15px 0;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Kích thước Logo theo chuẩn thiết kế */
+    .logo-img {
+      width: 150px; /* Desktop: 140-160px chiều rộng */
+      height: auto;
+      display: block;
+    }
+
+    /* Điều chỉnh trên Mobile */
+    @media (max-width: 768px) {
+      .logo-img {
+        width: 110px; /* Mobile: 100-120px chiều rộng */
+      }
+    }
+
+    /* Navigation Menu */
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+      transition: color 0.2s ease;
+    }
+
+    .main-nav a:hover {
+      color: #666;
+    }
+
+    /* ==========================================================================
+       4. MAIN CONTENT AREA (NỘI DUNG TRANG)
+       ========================================================================== */
+    main#MainContent {
+      min-height: 400px;
+      padding: 60px 0;
+    }
+
+    .demo-content-box {
+      border: 2px dashed #ddd;
+      padding: 40px;
+      text-align: center;
+      border-radius: 6px;
+      color: #888;
+    }
+
+    /* ==========================================================================
+       5. SITE FOOTER (PAGE 1)
+       ========================================================================== */
+    .site-footer {
+      background-color: #fafafa;
+      padding: 50px 0 30px;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .footer-col h3, .footer-col h4 {
+      font-size: 16px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: #000;
+    }
+
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+    }
+
+    /* Reponsive cho Footer */
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER CODE (snippets/header.liquid) -->
+  <!-- Line Slogan Chạy Chữ -->
+  <div class="announcement-bar">
+    <div class="marquee-wrapper">
+      <div class="marquee-content">
+        <span>"Sống đời thường, trong đời sống"</span>
+        <span>"Sống đời thường, trong đời sống"</span>
+        <span>"Sống đời thường, trong đời sống"</span>
+        <span>"Sống đời thường, trong đời sống"</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Chính & Logo -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo">
+        <a href="#">
+          <!-- Logo giả lập hiển thị đúng kích thước 150px -->
+          <img src="https://via.placeholder.com/150x45/000000/FFFFFF?text=TUYEN+LOGO" alt="Tuyên Logo" class="logo-img">
+        </a>
+      </div>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Sản phẩm</a></li>
+          <li><a href="#">Chính sách & Quy định</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 2. MAIN CONTENT (layout/theme.liquid - {{ content_for_layout }}) -->
+  <main id="MainContent">
+    <div class="container">
+      <div class="demo-content-box">
+        <h2>Khu vực hiển thị nội dung trang (Banner, About Tuyên, Sản phẩm nổi bật)</h2>
+        <p style="margin-top: 10px;">Thanh Header có câu slogan chuyển động và Footer thông tin liên hệ đã hoạt động đúng thiết kế.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- 3. FOOTER CODE (snippets/footer.liquid) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col">
+        <h3>TUYÊN</h3>
+        <p><em>"Sống đời thường, trong đời sống"</em></p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Thông tin liên hệ</h4>
+        <p>Email: contact@tuyen.vn</p>
+        <p>Hotline: 09xx xxx xxx</p>
+        <p>Địa chỉ: TP. Hồ Chí Minh, Việt Nam</p>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Chính sách & Quy định</h4>
+        <ul>
+          <li><a href="#">Chính sách đổi trả</a></li>
+          <li><a href="#">Hướng dẫn bảo quản</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 TUYÊN. Powered by Haravan.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
