@@ -1,0 +1,41 @@
+<section class="collection-page section-padding">
+  <div class="container">
+    <!-- Tiêu đề danh mục -->
+    <div class="collection-header text-center">
+      <h1 class="collection-title">{{ collection.title }}</h1>
+      {% if collection.description != blank %}
+        <div class="collection-desc">{{ collection.description }}</div>
+      {% endif %}
+    </div>
+
+    <!-- Chọn danh mục theo mã -->
+    <div class="collection-nav">
+      <ul class="category-tags">
+        <li class="active"><a href="/collections/all">Tất cả mã</a></li>
+        <!-- Danh sách mã sản phẩm gợi ý -->
+        <li><a href="#">Mã T-Shirt</a></li>
+        <li><a href="#">Mã Shirts</a></li>
+        <li><a href="#">Mã Trousers</a></li>
+      </ul>
+    </div>
+
+    <!-- Lưới hiển thị san pham -->
+    <div class="product-grid-4">
+      {% for product in collection.products %}
+        <div class="product-card">
+          <a href="{{ product.url }}" class="product-link">
+            <div class="product-image-wrapper">
+              <img src="{{ product.featured_image | img_url: '350x438' }}" alt="{{ product.title }}" class="product-img">
+            </div>
+            <div class="product-info text-center">
+              <h3 class="product-title">{{ product.title }}</h3>
+              <p class="product-price">{{ product.price | money }}</p>
+            </div>
+          </a>
+        </div>
+      {% else %}
+        <p class="no-products text-center">Chưa có sản phẩm nào trong danh mục này.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
