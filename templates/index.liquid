@@ -1,0 +1,53 @@
+<!-- 1. Banner chính -->
+<section class="hero-banner">
+  <div class="banner-wrapper">
+    <!-- Nếu dùng Video -->
+    {% if settings.use_banner_video %}
+      <video autoplay loop muted playsinline class="banner-video">
+        <source src="{{ 'banner-video.mp4' | asset_url }}" type="video/mp4">
+      </video>
+    {% else %}
+      <!-- Nếu dùng Ảnh (Desktop: 1920x900px / Mobile: 1080x1350px) -->
+      <picture>
+        <source media="(max-width: 768px)" srcset="{{ 'banner-mobile.jpg' | asset_url }}">
+        <img src="{{ 'banner-desktop.jpg' | asset_url }}" alt="Banner Tuyên Key Visual" class="banner-img">
+      </picture>
+    {% endif %}
+  </div>
+</section>
+
+<!-- 2. Section About Tuyên -->
+<section class="about-tuyen section-padding">
+  <div class="container text-center">
+    <h2 class="section-title">About Tuyên</h2>
+    <p class="about-desc">
+      "Sống đời thường, trong đời sống" — Tuyên mang đến những sản phẩm tinh giản, tập trung vào chất liệu và phom dáng ứng dụng hằng ngày.
+    </p>
+  </div>
+</section>
+
+<!-- 3. Section Top những sản phẩm nổi bật -->
+<section class="featured-products section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Sản phẩm nổi bật</h2>
+    </div>
+    
+    <div class="product-grid-4">
+      {% for product in collections['noi-bat'].products limit: 4 %}
+        <div class="product-card white-bg">
+          <a href="{{ product.url }}" class="product-link">
+            <div class="product-image-wrapper">
+              <!-- Ảnh đại diện 400x500px -->
+              <img src="{{ product.featured_image | img_url: '400x500' }}" alt="{{ product.title }}" class="product-img">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">{{ product.title }}</h3>
+              <p class="product-price">{{ product.price | money }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
